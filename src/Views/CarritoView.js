@@ -3,6 +3,10 @@ import { CarritoContext } from "../Context/carrito";
 
 export default function CarritoView() {
   let { carrito } = useContext(CarritoContext);
+  let total=0;
+  for(let i = 0; i<carrito.length; i++){
+    total += carrito[i].precioPlato*carrito[i].cantidad
+  }
   return (
     <div className="container">
       <div className="my-4 text-center">
@@ -30,6 +34,12 @@ export default function CarritoView() {
         </tr>
       ))}
         </tbody>
+        <tfoot>
+          <td>Total</td>
+          <td></td>
+          <td></td>
+          <td>S/{total}</td>
+        </tfoot>
       </table>
       
     </div>
