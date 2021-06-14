@@ -17,7 +17,7 @@ export default function GroupPlatos({
             return plat.id_categoriaPlato == id_categoriaPlato})
           .slice(0,8)
           .map((plat, i) => (
-            <div className="col-12 col-lg-10 col-md-6 col-sm-5" key={i}>
+            <div className="col-12 col-lg-3" key={i}>
               <Link style={{textDecoration:'none', color:'black'}} className="card mb-4 border-danger" to={`/detalle/${plat.id}`}>
                 <img className="card-img-top" src={plat.fotoPlato} />
                 <div className="card-body ">
