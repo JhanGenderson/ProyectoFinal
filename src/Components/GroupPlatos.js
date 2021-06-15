@@ -65,7 +65,7 @@ export default function GroupPlatos({
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Ej. Gorro"
+                  placeholder="Ej. Papa a la huancaina"
                   value={filtroNombre}
                   onChange={(e) => {
                     setFiltroNombre(e.target.value);
