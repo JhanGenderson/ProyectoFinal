@@ -4,6 +4,7 @@ import PlatoView from './Views/PlatoView'
 import PlatosEntradaView from './Views/PlatosEntradaView'
 import CarritoView from './Views/CarritoView'
 
+
 export default function Routes() {
     return (
         <div>

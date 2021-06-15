@@ -12,8 +12,14 @@ export default function PlatosEntradaView() {
     let {id}= useParams()
 
     const getPlato = async()=>{
-        let platosObtenidos = await obtenerPlato()
-        setPlato(platosObtenidos)
+        try {
+            let platosObtenidos = await obtenerPlato()
+            setPlato(platosObtenidos)
+            setCargando(false)
+        } catch (error) {
+            console.log(error)
+        }
+        
     }
 
     const obtenerCatego = async()=>{
@@ -34,12 +40,15 @@ export default function PlatosEntradaView() {
             {cargando?(
                 <Cargando/>
             ):(
-               <GroupPlatos plato={plato} categoriaPlato={catego.nombreCategoria} id_categoriaPlato={catego.id}/> 
+               <GroupPlatos 
+               plato={plato} 
+               categoriaPlato={catego.nombreCategoria} 
+               id_categoriaPlato={catego.id} 
+               mostrarFiltro={true}
+               setPlato={setPlato}/> 
             )}
             
         </Fragment>
-        // <div>
-        //      <GroupPlatos plato={plato} categoriaPlato={catego.nombreCategoria} id_categoriaPlato={catego.id}/>
-        // </div>
+       
     )
 }

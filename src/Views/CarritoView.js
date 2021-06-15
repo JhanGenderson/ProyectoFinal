@@ -3,10 +3,12 @@ import { CarritoContext } from "../Context/carrito";
 
 export default function CarritoView() {
   let { carrito } = useContext(CarritoContext);
+  console.log(carrito)
   let total=0;
   for(let i = 0; i<carrito.length; i++){
     total += carrito[i].precioPlato*carrito[i].cantidad
   }
+  console.log(total)
   return (
     <div className="container">
       <div className="my-4 text-center">
@@ -21,16 +23,17 @@ export default function CarritoView() {
                 <th>Nombre</th>
                 <th>Precio</th>
                 <th>Cantidad</th>
-                <th>Total a Pagar</th>
+                <th>Total a Pagar</th>  
+               
             </tr>
         </thead>
         <tbody>
             {carrito.map((plat, i) => (
         <tr key={i}>
             <td>{plat.nombrePlato}</td>
-            <td>S/. {plat.precioPlato}</td>
+            <td>S/{plat.precioPlato}</td>
             <td>{plat.cantidad}</td>
-            <td>S/. {plat.precioPlato*plat.cantidad}</td>
+            <td>S/{plat.precioPlato*plat.cantidad}</td>
         </tr>
       ))}
         </tbody>
